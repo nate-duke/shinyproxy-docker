@@ -9,6 +9,7 @@ ARG JAR_LOCATION=https://nexus.openanalytics.eu/service/rest/v1/search/assets/do
 
 RUN mkdir /opt/shinyproxy
 ADD $JAR_LOCATION /opt/shinyproxy/shinyproxy.jar
+RUN chmod 0644 /opt/shinyproxy/shinyproxy.jar
 
 RUN apt-get update -y && \
     apt-get install unzip && \
